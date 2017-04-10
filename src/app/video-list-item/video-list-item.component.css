@@ -1,0 +1,12 @@
+.card-content {
+  display: flex;
+}
+
+
+.video-info {
+
+}
+
+.video-thumbnail img {
+  max-width: 100%;
+}

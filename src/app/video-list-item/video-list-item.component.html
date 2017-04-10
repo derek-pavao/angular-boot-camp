@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col">
+    <div
+      class="card"
+      [class.blue-grey]="isSelected">
+      <div
+        class="card-content"
+        [class.white-text]="isSelected">
+
+        <div class="video-thumbnail">
+          <span class="card-title">{{video.title}}</span>
+          <img src="http://img.youtube.com/vi/{{video.id}}/0.jpg" />
+          <div class="cf">
+          <span class="left">By: {{video.author}}</span>
+          <span class="right">Views: {{video.viewDetails.length}}</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>

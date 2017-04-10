@@ -5,10 +5,18 @@ import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { VideoListComponent } from './video-list/video-list.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HeaderComponent } from './header/header.component';
+import { VideoListItemComponent } from './video-list-item/video-list-item.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    VideoListComponent,
+    DashboardComponent,
+    HeaderComponent,
+    VideoListItemComponent
   ],
   imports: [
     BrowserModule,
