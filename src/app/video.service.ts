@@ -173,7 +173,7 @@ export class VideoService {
   }
 
   public get selectedVideo$(): Observable<any> {
-    return this.selectedVideoSubject;
+    return this.selectedVideoSubject.asObservable();
   }
 
   private selectedVideoSubject: BehaviorSubject<any>;

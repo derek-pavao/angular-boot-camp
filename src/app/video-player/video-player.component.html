@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">{{selectedVideo.title}}</span>
+    <span>By: {{selectedVideo.author}}</span>
+    <iframe
+      allowfullscreen
+      frameborder="0"
+      height="315"
+      width="100%"
+      [src]="selectedVideoUrl">
+      <!--[src]="'https://www.youtube.com/embed/' + selectedVideo.id">-->
+
+    </iframe>
+  </div>
+</div>
+

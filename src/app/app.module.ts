@@ -10,6 +10,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
 import { VideoListItemComponent } from './video-list-item/video-list-item.component';
 import { VideoService } from './video.service';
+import { VideoPlayerComponent } from './video-player/video-player.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { VideoService } from './video.service';
     VideoListComponent,
     DashboardComponent,
     HeaderComponent,
-    VideoListItemComponent
+    VideoListItemComponent,
+    VideoPlayerComponent
   ],
   imports: [
     BrowserModule,

@@ -16,7 +16,6 @@ export class VideoListItemComponent implements OnInit {
 
   isSelected$: Observable<boolean>;
 
-
   constructor(private videoService: VideoService) { }
 
   @HostListener('click')
