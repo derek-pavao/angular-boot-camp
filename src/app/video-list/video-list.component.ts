@@ -1,4 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { VideoService } from '../video.service';
 
 @Component({
   selector: 'dd-video-list',
@@ -7,23 +9,12 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class VideoListComponent implements OnInit {
 
-  @Input()
-  videoList: any;
+  videoList$: Observable<any>;
 
-  @Output()
-  videoSelected = new EventEmitter<any>();
-
-  selectedVideoItemIndex: number;
-
-  constructor() { }
+  constructor(private videoService: VideoService) { }
 
   ngOnInit() {
-
+    this.videoList$ = this.videoService.videoList$;
+    this.videoService.getVideoList();
   }
-
-  videoItemClicked(index, video) {
-    this.selectedVideoItemIndex = index;
-    this.videoSelected.emit(video);
-  }
-
 }

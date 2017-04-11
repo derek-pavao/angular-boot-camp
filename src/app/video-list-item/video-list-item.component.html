@@ -2,10 +2,10 @@
   <div class="col">
     <div
       class="card"
-      [class.blue-grey]="isSelected">
+      [class.blue-grey]="isSelected$ | async">
       <div
         class="card-content"
-        [class.white-text]="isSelected">
+        [class.white-text]="isSelected$ | async">
 
         <div class="video-thumbnail">
           <span class="card-title">{{video.title}}</span>

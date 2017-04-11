@@ -9,6 +9,7 @@ import { VideoListComponent } from './video-list/video-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
 import { VideoListItemComponent } from './video-list-item/video-list-item.component';
+import { VideoService } from './video.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { VideoListItemComponent } from './video-list-item/video-list-item.compon
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [VideoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

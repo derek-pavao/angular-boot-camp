@@ -1,4 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/filter';
+import { VideoService } from '../video.service';
 
 @Component({
   selector: 'dd-video-list-item',
@@ -10,12 +14,21 @@ export class VideoListItemComponent implements OnInit {
   @Input()
   video;
 
-  @Input()
-  isSelected = false;
+  isSelected$: Observable<boolean>;
 
-  constructor() { }
+
+  constructor(private videoService: VideoService) { }
+
+  @HostListener('click')
+  selectVideo() {
+    this.videoService.selectVideo(this.video);
+  }
 
   ngOnInit() {
+    this.isSelected$ = this.videoService
+      .selectedVideo$
+      .filter((video) => video !== null)
+      .map((video) => video.id === this.video.id);
   }
 
 }
