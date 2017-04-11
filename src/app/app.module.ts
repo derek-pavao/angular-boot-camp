@@ -3,14 +3,19 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { VideoListComponent } from './video-list/video-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
 import { VideoListItemComponent } from './video-list-item/video-list-item.component';
-import { VideoService } from './video.service';
 import { VideoPlayerComponent } from './video-player/video-player.component';
+import { AppRoutingModule } from './app-routing.module';
+import { VideoService } from './video.service';
+import { FilterService } from './filter.service';
+import { FilterViewsComponent } from './filter-views/filter-views.component';
+import { ViewsBreakdownComponent } from './views-breakdown/views-breakdown.component';
+
+
 
 @NgModule({
   declarations: [
@@ -19,7 +24,9 @@ import { VideoPlayerComponent } from './video-player/video-player.component';
     DashboardComponent,
     HeaderComponent,
     VideoListItemComponent,
-    VideoPlayerComponent
+    VideoPlayerComponent,
+    FilterViewsComponent,
+    ViewsBreakdownComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +34,7 @@ import { VideoPlayerComponent } from './video-player/video-player.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [VideoService],
+  providers: [VideoService, FilterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">Views Breakdown</span>
+    <div>
+      Region: <div class="chip">{{selectedRegionFilter$ | async}}</div>
+    </div>
+    <div>
+      DateRange:
+      <div class="chip">{{dateRangeFilter.from | date}}</div>
+      <div class="chip">{{dateRangeFilter.to | date}}</div>
+    </div>
+    <div>
+      Age Groups:
+      <div
+      class="chip"
+      *ngFor="let ageFilter of selectedAgeFilters$ | async">{{ageFilter}}</div>
+
+  </div>
+</div>

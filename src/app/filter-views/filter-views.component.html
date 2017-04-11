@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">Filter Views</span>
+
+    <form>
+      <p *ngFor="let regionFilter of filterService.regionFilters">
+        <input
+          type="radio"
+          name="regionFilter"
+          [id]="regionFilter"
+          [value]="regionFilter"
+          (change)="regionFilterChanged()"
+          [(ngModel)]="selectedRegionFilter" />
+        <label [for]="regionFilter">{{regionFilter}}</label>
+      </p>
+    </form>
+
+  </div>
+</div>
