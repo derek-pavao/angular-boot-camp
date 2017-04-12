@@ -21,9 +21,10 @@ export class VideoPlayerComponent implements OnInit {
   ngOnInit() {
     this.selectedVideoSubscription = this.videoService.selectedVideo$
       .subscribe((video) => {
-        this.selectedVideo = video;
-        this.selectedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${video.id}`);
-
+        if (video !== null) {
+          this.selectedVideo = video;
+          this.selectedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${video.id}`);
+        }
       });
   }
 

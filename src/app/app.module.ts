@@ -14,6 +14,7 @@ import { VideoService } from './video.service';
 import { FilterService } from './filter.service';
 import { FilterViewsComponent } from './filter-views/filter-views.component';
 import { ViewsBreakdownComponent } from './views-breakdown/views-breakdown.component';
+import { AddVideoModule } from './add-video/add-video.module';
 
 
 
@@ -32,7 +33,8 @@ import { ViewsBreakdownComponent } from './views-breakdown/views-breakdown.compo
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AddVideoModule
   ],
   providers: [VideoService, FilterService],
   bootstrap: [AppComponent]
